@@ -1,10 +1,13 @@
 #!/usr/bin/awk -f
 
-BEGIN { FS=";" ; printf("{\r\n\"images\":[ \r\n"); }
+BEGIN { FS=";" ;}
 
 {
   if(FNR == 1)
   {
+      split(FILENAME,array,".");
+      
+      printf("{\r\n\"%s\":[ \r\n",array[1]);
       for(i=1 ; i<= NF ; i++)
       {
 	titre[i] = $i;
