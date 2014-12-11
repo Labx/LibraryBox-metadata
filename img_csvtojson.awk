@@ -1,6 +1,6 @@
 #!/usr/bin/awk -f
 
-BEGIN { FS=";" ; print "{" }
+BEGIN { FS=";" ; printf("{\r\n\"images\":[ \r\n"); }
 
 {
   if(FNR == 1)
@@ -11,33 +11,33 @@ BEGIN { FS=";" ; print "{" }
       }      
   }
   else
-  {
-    if(FNR == 2)
+  { 
+    jsonEscape($0);
+    if(FNR > 2)
     {
-      print "\"images\":{ ";  
+      printf(",\r\n");
     }
-    else
-    {
-      print ","
-      print "\"images\":{ ";
-    }
-    
+    printf("{");
+   
     for(i=1 ; i<= NF ; i++)
     {
+      printf ("\"%s\" : \"%s\"",titre[i],$i);
       if(i < NF)
-	print "\""titre[i]"\"" ":" "\""$i"\",";
-      else
-	print "\""titre[i]"\"" ":" "\""$i"\"";
+      {
+	printf(",");
+      }
       
     }
-    
-    print "}";
-
+    printf("}\r\n");
   }
  
 }
 
-END{print "}"}
+END{printf ("]\r\n}\r\n")}
 
-
+function jsonEscape(str)
+{
+    gsub("/","//");
+    gsub("\"","\\\"");
+}
 
