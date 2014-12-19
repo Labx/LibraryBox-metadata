@@ -1,7 +1,7 @@
 LibraryBox-metadata
 ===================
 
-Scripts to extract data from XLS file, audios and videos.
+Scripts to extract data from `XLS`/`CSV` audio and video files.
 
-Example of audio file: http://bandcamp.com/download?id=1202574386&ts=1418671707.1056358664&tsig=0e8c112c83ce883930e91ad486d87222&type=album
-(from website http://www.acim.asso.fr/ziklibrenbib/)
+## Sample data
+* [audio files examples](http://bandcamp.com/download?id=1202574386&ts=1418671707.1056358664&tsig=0e8c112c83ce883930e91ad486d87222&type=album) (from website http://www.acim.asso.fr/ziklibrenbib/).
