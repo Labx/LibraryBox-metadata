@@ -7,11 +7,11 @@ SELECT
   book.pubdate,
   comments.text AS summary,
 serie.id AS series,
--- series_index,
+series_index,
   book.path,
-  tag.id as tags
---   author.id   AS aid,
---   book.id   AS bid
+  tag.id as tags,
+  author.id   AS aid,
+  book.id   AS bid
 FROM books AS book
   -- fetch author data
   LEFT OUTER JOIN books_authors_link ON books_authors_link.book = book.id
