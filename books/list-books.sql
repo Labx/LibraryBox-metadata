@@ -3,14 +3,15 @@ SELECT
   book.id   AS id,
   title,
   book.sort,
-  author.sort AS authors,
+  author.id   AS author_id,
+  author.name AS author_name,
+  author.sort AS author_sort,
   book.pubdate,
   comments.text AS summary,
 serie.id AS series,
 series_index,
   book.path,
   tag.id as tags,
-  author.id   AS aid,
   book.id   AS bid
 FROM books AS book
   -- fetch author data
