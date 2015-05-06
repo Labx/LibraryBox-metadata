@@ -11,6 +11,11 @@ group_by(.id) | map({
     ) | unique,
     summary:    .[0].summary,
     series: map(.series)| unique,
-    tags: map(.tags)| unique,
+    tags: map(
+    {
+        id: .tag_id,
+        name: .tag_name
+    }
+    )| unique,
     path: .[0].path
 })

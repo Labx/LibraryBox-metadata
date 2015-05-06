@@ -11,7 +11,8 @@ SELECT
 serie.id AS series,
 series_index,
   book.path,
-  tag.id as tags,
+  tag.id as tag_id,
+  tag.name as tag_name,
   book.id   AS bid
 FROM books AS book
   -- fetch author data
