@@ -10,7 +10,11 @@ group_by(.id) | map({
     }
     ) | unique,
     summary:    .[0].summary,
-    series: map(.series)| unique,
+    serie: map(
+    {
+        id: .serie_id,
+        name: .serie_name
+    }) | unique,
     tags: map(
     {
         id: .tag_id,
